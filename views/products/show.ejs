@@ -1,0 +1,21 @@
+<%layout('layouts/boilerplate')%>
+    <div class="container-fluid">
+        <h1>
+            <%=food.name%>
+        </h1>
+        <p>Category:
+            <%=food.category%>
+        </p>
+        <p>Good Until:
+            <%=food.expiryDate%>
+        </p>
+        <p>Location:
+            <%=food.location%>
+        </p>
+
+        <form action="/foods/<%=food._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger mb-3">Delete</button>
+        </form>
+    </div>
+    <a href="/foods" class="btn btn-secondary"> All Foods </a>
+    <a href="/foods/<%=food._id%>/edit" class="btn btn-warning">Edit Product </a>

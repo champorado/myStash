@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container-md">
+        <h1>Edit Product</h1>
+        <em>**Current expiry:
+        <%=food.expiryDate%></em>
+        <form action="/foods/<%=food._id%>?_method=PUT" method="POST">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" placeholder="product name" value="<%=food.name%>">
+            <label for="category">Category</label>
+            <select name="category" id="category ">
+<% for (let category of categories) {%>
+  <option value="<%=category%>"
+        <%=food.category === category? 'selected' : '' %>>
+            <%=category%>
+                </option>
+                <% }  %>
+                    </select>
+
+
+            <label for="location">Location</label>
+            <select name="location" id="location">
+        <% for (let location of locations) {%>
+          <option value="<%=location%>"
+                <%=food.location === location? 'selected' : '' %>>
+                    <%=location%>
+                        </option>
+                        <% }  %>
+                            </select>
+
+
+            <label for="expiryDate">Good Until</label>
+            <input type="date" id="expiryDate" name="expiryDate" value="<%=food.expiryDate%>">
+
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    <!-- back to showpage -->
+    <a href="/foods/<%=food._id%>" class="btn btn-warning">Cancel</a>

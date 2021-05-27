@@ -1,0 +1,23 @@
+<%layout('layouts/boilerplate')%>
+
+    <h1>Full Inventory</h1>
+
+    <% for (let food of foods) { %>
+        <div class="card mt-3 mb-3" style="width: 400px">
+            <div class="card-body ">
+                <h3>
+                    <%=food.name%>
+                </h3>
+                Expiry:
+                <%=food.expiryDate%>
+                    <br>
+                    <p><em>See
+                        <a href="/foods/<%=food._id%>">
+                            <%=food.name%>
+                        </a>
+                    </em></p>
+            </div>
+        </div>
+
+
+        <% } %>
