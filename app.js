@@ -86,7 +86,8 @@ app.post('/foods', async(req, res) => {
     const newFood = new Food(req.body);
     await newFood.save();
     console.log(newFood)
-    res.redirect(`foods/${newFood._id}`)
+        // res.redirect(`foods/${newFood._id}`)
+    res.redirect('/foods')
 })
 
 app.delete('/foods/:id', async(req, res) => {
