@@ -1,5 +1,5 @@
 <%layout('layouts/boilerplate')  %>
-    <div class="container-md">
+    <div class="container-md mb-25">
         <h1>Add A Product</h1>
 
         <form action="/foods" method="POST">
@@ -23,8 +23,11 @@
             <label for="expiryDate">Expiry Date</label>
             <input type="date" id="expiryDate" name="expiryDate">
             <br>
-            <button class="btn btn-success">Submit</button>
+            <div class="form-floating">
+                <label for="notes">NOTES</label>
+                <textarea class="form-control" placeholder="extra info" id="notes" name="notes" style="width:400px; height: 100px"></textarea>
+            </div>
+            <button class="btn btn-success mt-3 mb-5">Submit</button>
 
         </form>
-
     </div>

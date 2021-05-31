@@ -4,8 +4,10 @@
         <em>**Current expiry:
         <%=food.expiryDate%></em>
         <form action="/foods/<%=food._id%>?_method=PUT" method="POST">
+
             <label for="name">Product Name</label>
             <input type="text" id="name" name="name" placeholder="product name" value="<%=food.name%>">
+
             <label for="category">Category</label>
             <select name="category" id="category ">
 <% for (let category of categories) {%>
@@ -31,8 +33,14 @@
             <label for="expiryDate">Good Until</label>
             <input type="date" id="expiryDate" name="expiryDate" value="<%=food.expiryDate%>">
 
-            <button class="btn btn-success">Submit</button>
+            <div class="form-floating">
+                <label for="notes">Notes</label>
+                <textarea class="form-control" style="height: 100px" id="notes" name="notes"><%=food.notes%> </textarea>
+
+            </div>
+
+            <button class="btn btn-success mt-3">Submit</button>
         </form>
     </div>
     <!-- back to showpage -->
-    <a href="/foods/<%=food._id%>" class="btn btn-warning">Cancel</a>
+    <a href="/foods/<%=food._id%>" class="btn btn-warning mt-3">Cancel</a>

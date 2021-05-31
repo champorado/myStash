@@ -12,7 +12,9 @@
         <p>Location:
             <%=food.location%>
         </p>
-
+        <p>Notes:
+            <%=food.notes%>
+        </p>
         <form action="/foods/<%=food._id%>?_method=DELETE" method="POST">
             <button class="btn btn-danger mb-3">Delete</button>
         </form>

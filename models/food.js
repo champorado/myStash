@@ -1,3 +1,4 @@
+const { string } = require('joi');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
@@ -19,6 +20,9 @@ const foodSchema = new Schema({
         type: String,
         enum: ['fridge', 'deep freeze', 'pantry', 'ottoman', 'emergency', 'shelf'],
         required: true
+    },
+    notes: {
+        type: String
     }
 })
 

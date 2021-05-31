@@ -2,26 +2,29 @@
 
     <h1>Full Inventory</h1>
 
+    <div>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for food..">
+    </div>
 
     <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">FOOD</th>
-                    <th scope="col">LOCATION</th>
-                    <th scope="col">EXPIRATION</th>
-                    <th scope="col">VIEW</th>
-                </tr>
-            </thead>
-            <tbody>
+        <table id="myTable" class="table table-hover mt-3">
+            <tr class="header table-secondary">
+                <th style="width:30%;">NAME</th>
+                <th style="width:15%;">LOCATION</th>
+                <th style="width:25%;">EXPIRY</th>
+                <th style="width:30%;">NOTES</th>
+            </tr>
+            <tr>
+
                 <% for (let food of foods) { %>
-                    <td>
-                        <%=foodNum%>
-                    </td>
+                    <!-- <td>
+                    <%=foodNum%>
+                </td> -->
 
                     <td>
-                        <%=food.name%>
+                        <a href="/foods/<%=food._id%>">
+                            <%=food.name%>
+                        </a>
                     </td>
                     <td>
                         <%=food.location%>
@@ -29,17 +32,13 @@
                     <td>
                         <%=food.expiryDate%>
                     </td>
-                    <td>See
-                        <a href="/foods/<%=food._id%>">
-                            <%=food.name%>
-                        </a>
+                    <td>
+                        <%=food.notes%>
                     </td>
-
+            </tr>
+            <% foodNum++ %>
+                <% } %>
                     </tr>
-                    <% foodNum++ %>
-                        <% } %>
 
-
-            </tbody>
         </table>
     </div>
