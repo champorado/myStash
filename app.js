@@ -66,6 +66,7 @@ const categories = ['produce', 'meat', 'seafood', 'bread', 'dry good', 'snack', 
 const locations = ['fridge', 'deep freeze', 'pantry', 'ottoman', 'emergency', 'shelf']
     //displays all foods
 
+//food ref count on index page
 const foodNum = 1;
 
 app.get('/foods', async(req, res) => {
