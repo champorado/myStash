@@ -65,10 +65,13 @@ const categories = ['produce', 'meat', 'seafood', 'bread', 'dry good', 'snack', 
     //locations of foods
 const locations = ['fridge', 'deep freeze', 'pantry', 'ottoman', 'emergency', 'shelf']
     //displays all foods
+
+const foodNum = 1;
+
 app.get('/foods', async(req, res) => {
     const foods = await Food.find({})
-    console.log(foods)
-    res.render('products/index', { foods })
+
+    res.render('products/index', { foods, foodNum })
 })
 
 //loads page to input new food
