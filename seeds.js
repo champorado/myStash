@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Food = require('./models/food')
 
+//pre-populate data into mongodb for testing
 mongoose.connect('mongodb://localhost:27017/myStash', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
@@ -29,16 +30,19 @@ mongoose.connect('mongodb://localhost:27017/myStash', { useNewUrlParser: true, u
 const seedProducts = [{
         name: 'Carrots',
         category: 'produce',
+        location: 'fridge',
         expiryDate: '2021-06-09'
     },
     {
         name: 'Fusilli',
-        category: 'dry goods',
+        category: 'dry good',
+        location: 'pantry',
         expiryDate: '2022-12-09'
     },
     {
         name: 'Pepperoni Pizza',
         category: 'snack',
+        location: 'deep freeze',
         expiryDate: '2021-11-01'
     },
 ]
