@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const moment = require('moment-timezone');
+const timeZone = require('mongoose-timezone');
 const path = require('path');
 // const ejs = require('ejs') //for js enabled html
 const ejsMate = require('ejs-mate');
@@ -9,6 +11,7 @@ const methodOverride = require('method-override'); //allows you to add PUT/DELET
 //models
 
 const Food = require('./models/food')
+
 
 //authentication
 const passport = require('passport');
@@ -68,11 +71,12 @@ const locations = ['fridge', 'deep freeze', 'pantry', 'ottoman', 'emergency', 's
 
 //food ref count on index page
 const foodNum = 1;
-
+//moment-timezone conversion
+const mmt = moment.tz
 app.get('/foods', async(req, res) => {
     const foods = await Food.find({})
-
-    res.render('products/index', { foods, foodNum })
+    console.log('Timezone:', moment.tz.guess())
+    res.render('products/index', { foods, foodNum, mmt })
 })
 
 //loads page to input new food
@@ -86,7 +90,8 @@ app.post('/foods', async(req, res) => {
     const newFood = new Food(req.body);
     await newFood.save();
     console.log(newFood)
-        // res.redirect(`foods/${newFood._id}`)
+
+    // res.redirect(`foods/${newFood._id}`)
     res.redirect('/foods')
 })
 
@@ -101,7 +106,7 @@ app.get('/foods/:id/edit', async(req, res) => {
     //find food by id & then pass it through page to load
     const { id } = req.params;
     const food = await Food.findById(id)
-    res.render('products/edit', { food, categories, locations })
+    res.render('products/edit', { food, categories, locations, mmt })
 })
 
 //update product
@@ -113,11 +118,14 @@ app.put('/foods/:id', async(req, res) => {
 })
 
 //displays food info
+
 app.get('/foods/:id', async(req, res) => {
     const { id } = req.params;
     const food = await Food.findById(id)
+
+
     console.log(food)
-    res.render('products/show', { food })
+    res.render('products/show', { food, mmt })
 })
 
 

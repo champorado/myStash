@@ -1,5 +1,10 @@
 const { string } = require('joi');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+const moment = require('moment-timezone');
+const dateAb = moment.tz(new Date(), 'America/Edmonton')
+
+const timeZone = require('mongoose-timezone');
 const Schema = mongoose.Schema;
 
 const foodSchema = new Schema({
@@ -14,7 +19,14 @@ const foodSchema = new Schema({
         required: true
     },
     expiryDate: {
-        type: Date
+        type: Date,
+        default: dateAb
+            // date: Date,
+            // subDocument: {
+            //     subDate: {
+            //         type: Date,
+            //     },
+            // },
     },
     location: {
         type: String,
@@ -26,7 +38,8 @@ const foodSchema = new Schema({
     }
 })
 
-
 const Food = mongoose.model('Food', foodSchema);
+
+// foodSchema.plugin(timeZone, { paths: ['expiryDate.date', 'subDocument.subDate'] });
 
 module.exports = Food;

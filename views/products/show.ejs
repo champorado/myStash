@@ -7,7 +7,7 @@
             <%=food.category%>
         </p>
         <p>Good Until:
-            <%=food.expiryDate%>
+            <%=mmt(food.expiryDate, 'UTC-600')%>
         </p>
         <p>Location:
             <%=food.location%>

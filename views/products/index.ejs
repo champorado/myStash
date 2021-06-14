@@ -30,7 +30,7 @@
                         <%=food.location%>
                     </td>
                     <td>
-                        <%=food.expiryDate%>
+                        <%=mmt(food.expiryDate, 'UTC-600').format('YYYY/MM/DD')%>
                     </td>
                     <td>
                         <%=food.notes%>
