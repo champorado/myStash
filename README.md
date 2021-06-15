@@ -1,18 +1,18 @@
 # myStash
-![Image of myStash index inventory page](assets/myStash-screen-3.png)
-![Image of myStash product info page](assets/myStash-screen-4.png)
-![Image of myStash add product page](assets/myStash-screen-2.png)
-![Image of myStash inventory page](assets/myStash-screen-1.png)
-
 
 ## About
 This web app was created to help assist in keeping track of food inventory. 
 
 Features:
-* Add new food to stock
-* Update/delete food stock
+* Update/delete food inventory
 * Display all inventory
 * Search through food inventory
+
+![Image of myStash index inventory page](assets/myStash-screen-3.png)
+![Image of myStash product info page](assets/myStash-screen-4.png)
+![Image of myStash add product page](assets/myStash-screen-2.png)
+![Image of myStash inventory page](assets/myStash-screen-1.png)
+
 
 Tools used include:
 * [Bootstrap](https://getbootstrap.com/)(css styling)
