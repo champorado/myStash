@@ -30,6 +30,6 @@ Tools used include:
 Go to terminal (make sure you are in myStash project folder) & type in: `nodemon app.js`
 
 ## Future Updates
-* Current Page-Menu Highlights
-* Login with Credentials
-* Message/Error Alerts
+* Current Page-Menu Highlights 
+* Login with Credentials - using passport
+* Message/Validation Error Alerts - using joi
