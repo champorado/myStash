@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const moment = require('moment-timezone');
-const timeZone = require('mongoose-timezone');
 const path = require('path');
 // const ejs = require('ejs') //for js enabled html
 const ejsMate = require('ejs-mate');
@@ -9,7 +8,6 @@ const session = require('express-session') //storing cookies session
 const methodOverride = require('method-override'); //allows you to add PUT/DELETE methods
 
 //models
-
 const Food = require('./models/food')
 
 
