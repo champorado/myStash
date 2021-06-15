@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Food = require('./models/food')
 
-//pre-populate data into mongodb for testing
+//pre-populate data into mongodb for testing (optional)
 mongoose.connect('mongodb://localhost:27017/myStash', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
