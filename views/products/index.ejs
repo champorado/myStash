@@ -17,9 +17,6 @@
             <tr>
 
                 <% for (let food of foods) { %>
-                    <!-- <td>
-                    <%=foodNum%>
-                </td> -->
 
                     <td>
                         <a href="/foods/<%=food._id%>">
@@ -30,15 +27,14 @@
                         <%=food.location%>
                     </td>
                     <td>
-                        <%=mmt(food.expiryDate, 'UTC').format('YYYY/MM/DD')%>
+                        <%=mmt(food.expiryDate, 'UTC').format('YYYY / MM / DD')%>
                     </td>
                     <td>
                         <%=food.notes%>
                     </td>
             </tr>
-            <% foodNum++ %>
-                <% } %>
-                    </tr>
+            <% } %>
+                </tr>
 
         </table>
     </div>

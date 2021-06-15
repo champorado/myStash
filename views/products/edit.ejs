@@ -31,15 +31,15 @@
 
 
             <label for="expiryDate">Good Until</label>
-            <input type="date" id="expiryDate" name="expiryDate" value="<%=food.expiryDate%>">
+            <input type="date" id="expiryDate" name="expiryDate" value="<%=mmt(food.expiryDate, 'UTC').format('YYYY-MM-DD')%>">
 
-            <div class="form-floating">
-                <label for="notes">Notes</label>
-                <textarea class="form-control" style="height: 100px" id="notes" name="notes"><%=food.notes%> </textarea>
+            <div class="form-floating ">
+                <label for="notes ">Notes</label>
+                <textarea class="form-control " style="height: 100px " id="notes " name="notes "><%=food.notes%> </textarea>
 
             </div>
 
-            <button class="btn btn-success mt-3">Submit</button>
+            <button class="btn btn-success mt-3 ">Submit</button>
         </form>
     </div>
     <!-- back to showpage -->

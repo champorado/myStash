@@ -67,16 +67,15 @@ app.get('/logout', (req, res) => {
 const categories = ['produce', 'meat', 'seafood', 'bread', 'dry good', 'snack', 'dairy']
     //locations of foods
 const locations = ['fridge', 'deep freeze', 'pantry', 'ottoman', 'emergency', 'shelf']
-    //displays all foods
 
-//food ref count on index page
-const foodNum = 1;
+
 //moment-timezone conversion
 const mmt = moment.tz
+
+//displays all foods
 app.get('/foods', async(req, res) => {
     const foods = await Food.find({})
-    console.log('Timezone:', moment.tz.guess())
-    res.render('products/index', { foods, foodNum, mmt })
+    res.render('products/index', { foods, mmt })
 })
 
 //loads page to input new food

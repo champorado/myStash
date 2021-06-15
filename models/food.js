@@ -2,7 +2,7 @@ const { string } = require('joi');
 const mongoose = require('mongoose');
 
 const moment = require('moment-timezone');
-const dateAb = moment.tz(new Date(), 'America/Edmonton')
+// const dateAb = moment.tz(new Date(), 'America/Edmonton')
 
 const timeZone = require('mongoose-timezone');
 const Schema = mongoose.Schema;
@@ -20,13 +20,13 @@ const foodSchema = new Schema({
     },
     expiryDate: {
         type: Date,
-        default: dateAb
-            // date: Date,
-            // subDocument: {
-            //     subDate: {
-            //         type: Date,
-            //     },
-            // },
+        // default: dateAb
+        // date: Date,
+        // subDocument: {
+        //     subDate: {
+        //         type: Date,
+        //     },
+        // },
     },
     location: {
         type: String,
