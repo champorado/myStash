@@ -1,8 +1,7 @@
 <% layout('layouts/boilerplate') %>
     <div class="container-md">
         <h1>Edit Product</h1>
-        <em>**Current expiry:
-            <%=mmt(food.expiryDate, 'UTC').format('YYYY/MM/DD')%></em>
+
         <form action="/foods/<%=food._id%>?_method=PUT" method="POST">
 
             <label for="name">Product Name</label>
