@@ -11,22 +11,6 @@ mongoose.connect('mongodb://localhost:27017/myStash', { useNewUrlParser: true, u
         console.log(err)
     })
 
-
-
-// const f = new Food({
-//     name: 'Grapefruit',
-//     category: 'produce',
-//     expiryDate: '2021-12-09'
-// })
-
-// f.save()
-//     .then(f => {
-//         console.log(f)
-//     })
-//     .catch(e => {
-//         console.log(e)
-//     })
-
 const seedProducts = [{
         name: 'Carrots',
         category: 'produce',
