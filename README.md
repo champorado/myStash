@@ -1,7 +1,7 @@
 # myStash
 
 ## About
-This web app was created to help assist in keeping track of food inventory. 
+This web app was created to help assist in keeping track of food inventory to help reduce food waste.
 
 Features:
 * Update/delete food inventory
